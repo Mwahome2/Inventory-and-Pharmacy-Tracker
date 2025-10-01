@@ -280,7 +280,8 @@ with st.sidebar:
             if user:
                 st.session_state['auth_user'] = user
                 st.success(f"Logged in as {user['username']} ({user['role']})")
-                st.experimental_rerun()
+                st.rerun()
+
             else:
                 st.error('Invalid credentials')
         st.write('---')
@@ -317,7 +318,8 @@ with st.sidebar:
         st.write(f"Role: {user['role']}")
         if st.button('Logout'):
             st.session_state['auth_user'] = None
-            st.experimental_rerun()
+            st.rerun()
+
 
 # ----- Main -----
 st.title('Kisumu County Referral Hospital — Inventory & Pharmacy Tracker')
