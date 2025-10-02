@@ -251,10 +251,10 @@ def to_csv_bytes(df: pd.DataFrame) -> bytes:
 
 def to_excel_bytes(df: pd.DataFrame) -> bytes:
     with io.BytesIO() as towrite:
-        writer = pd.ExcelWriter(towrite, engine='openpyxl')
-        df.to_excel(writer, index=False, sheet_name='Sheet1')
-        writer.save()
+        with pd.ExcelWriter(towrite, engine='openpyxl') as writer:
+            df.to_excel(writer, index=False, sheet_name='Sheet1')
         return towrite.getvalue()
+
 
 
 # -----------------------------
