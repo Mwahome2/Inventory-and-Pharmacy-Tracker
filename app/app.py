@@ -270,7 +270,7 @@ if 'auth_user' not in st.session_state:
 
 # ----- Sidebar: Login / User info -----
 with st.sidebar:
-    st.title('Kisumu Inventory')
+    st.title('💊Kisumu Inventory')
     if st.session_state['auth_user'] is None:
         st.subheader('Login')
         username = st.text_input('Username')
@@ -322,7 +322,7 @@ with st.sidebar:
 
 
 # ----- Main -----
-st.title('Kisumu County Referral Hospital — Inventory & Pharmacy Tracker')
+st.title('💊Kisumu County Referral Hospital — Inventory & Pharmacy Tracker')
 
 # tabs
 tabs = st.tabs(['Dashboard', 'Inventory', 'Transactions', 'Suppliers', 'Reports', 'Settings'])
